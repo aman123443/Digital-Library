@@ -6,8 +6,8 @@ COPY src ./src
 RUN mvn clean package -DskipTests
 
 # Stage 2: Create the final, lightweight production image
-# Use the reliable eclipse-temurin image instead of openjdk
-FROM eclipse-temurin:17-jre-slim
+# Using a more specific and stable tag to improve reliability
+FROM eclipse-temurin:17-jre-slim-jammy
 
 WORKDIR /app
 COPY --from=builder /app/target/*.jar app.jar
