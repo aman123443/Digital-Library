@@ -19,10 +19,7 @@ public class Book {
     @Column(columnDefinition = "TEXT")
     private String description;
 
-    // This will be for the DOWNLOAD button (e.g., the .epub link)
     private String contentUrl;
-
-    // This is the NEW field for the READ ONLINE feature (the .html link)
     private String readUrl;
 
     @ManyToOne(fetch = FetchType.LAZY)
